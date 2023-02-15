@@ -17,5 +17,5 @@ require("bufferline").setup {
     }
 }
 
-vim.keymap.set("n", "[b", vim.cmd.BufferLineCycleNext)
-vim.keymap.set("n", "]b", vim.cmd.BufferLineCyclePrev)
+vim.keymap.set("n", "]b", vim.cmd.BufferLineCycleNext)
+vim.keymap.set("n", "[b", vim.cmd.BufferLineCyclePrev)

@@ -1,6 +1,5 @@
-function ColorMyPencils(color)
-    color = color or "tokyonight-storm"
-    vim.cmd.colorscheme(color)
-end
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+})
 
-ColorMyPencils()
+vim.cmd.colorscheme("catppuccin")
