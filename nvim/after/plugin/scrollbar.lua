@@ -1,8 +1,8 @@
-local colors = require("catppuccin.palettes").get_palette "mocha"
+local colors = require("sherbet.palette")
 
 require("scrollbar").setup({
     handle = {
-        color = colors.bg_highlight,
+        color = colors.hint_gray,
     },
     marks = {
         Search = { color = colors.orange },

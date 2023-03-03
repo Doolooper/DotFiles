@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -83,11 +88,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  catppuccin = {
-    loaded = true,
-    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -130,11 +130,6 @@ _G.packer_plugins = {
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  harpoon = {
-    loaded = true,
-    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/ThePrimeagen/harpoon"
-  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
@@ -160,10 +155,25 @@ _G.packer_plugins = {
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-cursorline"] = {
+    loaded = true,
+    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
+    url = "https://github.com/yamatsum/nvim-cursorline"
+  },
+  ["nvim-hlslens"] = {
+    loaded = true,
+    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
+    url = "https://github.com/kevinhwang91/nvim-hlslens"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -206,6 +216,11 @@ _G.packer_plugins = {
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["sherbet.nvim"] = {
+    loaded = true,
+    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/sherbet.nvim",
+    url = "https://github.com/lewpoly/sherbet.nvim"
+  },
   ["simpleIndentGuides.nvim"] = {
     config = { "\27LJ\2\n]\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\23simpleIndentGuides\frequire\tlist\bopt\bvim\0" },
     loaded = true,
@@ -221,11 +236,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/doolooper/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
     loaded = true,

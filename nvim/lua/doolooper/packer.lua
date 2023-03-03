@@ -1,83 +1,94 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+return require("packer").startup(function(use)
+    use("wbthomason/packer.nvim")
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+    use({
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.x",
+        requires = { { "nvim-lua/plenary.nvim" } }
+    })
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use("lewpoly/sherbet.nvim")
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/playground')
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
-    use('ThePrimeagen/harpoon')
+    use("nvim-treesitter/playground")
 
-    use('mbbill/undotree')
+    use("mbbill/undotree")
 
-    use('tpope/vim-fugitive')
-
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+    use({
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v1.x",
         requires = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
-            { 'williamboman/mason.nvim' }, -- Optional
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+            { "neovim/nvim-lspconfig" },
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'hrsh7th/cmp-buffer' }, -- Optional
-            { 'hrsh7th/cmp-path' }, -- Optional
-            { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-            { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+            { "hrsh7th/nvim-cmp" },
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
+            { "saadparwaiz1/cmp_luasnip" },
+            { "hrsh7th/cmp-nvim-lua" },
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip' }, -- Required
-            { 'rafamadriz/friendly-snippets' }, -- Optional
+            { "L3MON4D3/LuaSnip" },
+            { "rafamadriz/friendly-snippets" },
         }
-    }
+    })
 
     use("github/copilot.vim")
-    use {
-        'nvim-lualine/lualine.nvim',
+
+    use({
+        "nvim-lualine/lualine.nvim",
         requires = {
-            'nvim-tree/nvim-web-devicons', opt = true
+            "nvim-tree/nvim-web-devicons", opt = true
         }
-    }
-    use {
-        'nvim-tree/nvim-tree.lua',
+    })
+
+    use({
+        "nvim-tree/nvim-tree.lua",
         requires = {
-            'nvim-tree/nvim-web-devicons',
+            "nvim-tree/nvim-web-devicons",
         },
-    }
+    })
 
-    use {
-        'akinsho/bufferline.nvim',
+    use({
+        "akinsho/bufferline.nvim",
         tag = "v3.*",
-        requires = 'nvim-tree/nvim-web-devicons'
-    }
+        requires = "nvim-tree/nvim-web-devicons"
+    })
 
-    use {
-        'lucastavaresa/simpleIndentGuides.nvim',
+    use({
+        "lucastavaresa/simpleIndentGuides.nvim",
         config = function()
-            vim.opt.list = true -- enable in all buffers
+            vim.opt.list = true
             require("simpleIndentGuides").setup()
         end
-    }
-    use('airblade/vim-gitgutter')
-    use('kdheepak/lazygit.nvim')
+    })
+
+    use("airblade/vim-gitgutter")
+
+    use("kdheepak/lazygit.nvim")
+
     use("petertriho/nvim-scrollbar")
-    use {
+
+    use("kevinhwang91/nvim-hlslens")
+
+    use({
         "lewis6991/gitsigns.nvim",
         config = function()
-            require('gitsigns').setup()
+            require("gitsigns").setup()
             require("scrollbar.handlers.gitsigns").setup()
         end
-    }
+    })
+
+    use("yamatsum/nvim-cursorline")
+
+    use("numToStr/Comment.nvim")
+
+    use("karb94/neoscroll.nvim")
 end)

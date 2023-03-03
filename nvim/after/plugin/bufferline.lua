@@ -2,6 +2,7 @@ require("bufferline").setup {
     options = {
         diagnostics = "nvim_lsp",
         show_close_icon = true,
+        separator_style = "slant",
         hover = {
             enable = true,
             reveal = {'close'}

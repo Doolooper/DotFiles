@@ -1,5 +1,7 @@
-require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-})
+vim.cmd.colorscheme("sherbet")
 
-vim.cmd.colorscheme("catppuccin")
+vim.g.sherbet_italic_keywords = false
+vim.g.sherbet_italic_functions = false
+vim.g.sherbet_italic_comments = false
+vim.g.sherbet_italic_loops = false
+vim.g.sherbet_italic_conditionals = false
