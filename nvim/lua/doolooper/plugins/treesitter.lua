@@ -11,9 +11,13 @@ treesitter.setup({
 		enable = true,
 	},
 	-- enable indentation
-	indent = { enable = true },
+	indent = {
+		enable = true,
+	},
 	-- enable autotagging (w/ nvim-ts-autotag plugin)
-	autotag = { enable = true },
+	autotag = {
+		enable = true,
+	},
 	-- ensure these language parsers are installed
 	ensure_installed = {
 		"json",
@@ -36,4 +40,13 @@ treesitter.setup({
 	},
 	-- auto install above language parsers
 	auto_install = true,
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<TAB>",
+			scope_incremental = "<TAB>",
+			node_incremental = "<TAB>",
+			node_decremental = "<S-TAB>",
+		},
+	},
 })

@@ -61,3 +61,6 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- lazygit
 keymap.set("n", "<leader>gg", ":LazyGit<CR>")
+
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")

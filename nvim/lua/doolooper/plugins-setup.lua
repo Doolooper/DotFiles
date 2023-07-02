@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
-vim.cmd([[ 
+vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
@@ -40,10 +40,6 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
-
-	-- essential plugins
-	use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
-	use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
 	-- commenting with gc
 	use("numToStr/Comment.nvim")
@@ -109,17 +105,29 @@ return packer.startup(function(use)
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
-	use("lucastavaresa/simpleIndentGuides.nvim") -- show indentation
+	use("lukas-reineke/indent-blankline.nvim") -- show indentation
 
 	-- scrollbar
 	use("petertriho/nvim-scrollbar")
 	use("karb94/neoscroll.nvim")
+
+	use("gorbit99/codewindow.nvim")
 
 	use("kevinhwang91/nvim-hlslens")
 
 	use("kdheepak/lazygit.nvim")
 
 	use("yamatsum/nvim-cursorline")
+
+	use("VidocqH/lsp-lens.nvim")
+
+	use("f-person/git-blame.nvim")
+
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+
+	use("willothy/moveline.nvim", { run = "make" })
+
+	use("editorconfig/editorconfig-vim")
 
 	if packer_bootstrap then
 		require("packer").sync()
