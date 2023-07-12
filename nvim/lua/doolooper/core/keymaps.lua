@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- general
+keymap.set("n", "<leader>w", ":w<CR>") -- save file
 
 -- use <C-c> to exit insert mode
 keymap.set("i", "<C-c>", "<Esc>")
@@ -62,5 +63,8 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 -- lazygit
 keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 
+-- select the word under cursor and ready to replace
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- close current buffer and switch to previous buffer
 keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>")

@@ -12,6 +12,13 @@ opt.shiftwidth = 4 -- 4 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true -- smarter indenting
+-- folding
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- line wrapping
 opt.wrap = false -- disable line wrapping
 
@@ -49,3 +56,4 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
