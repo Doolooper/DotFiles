@@ -32,13 +32,10 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 end
 
 require("ufo").setup({
-	provider_selector = function(bufnr, filetype, buftype)
-		return { "treesitter", "indent" }
-	end,
 	fold_virt_text_handler = handler,
 })
 
-vim.keymap.set("n", "<leader>fO", ufo.openAllFolds)
-vim.keymap.set("n", "<leader>fP", ufo.closeAllFolds)
-vim.keymap.set("n", "<leader>fo","<cmd>foldopen<cr>")
-vim.keymap.set("n", "<leader>fp","<cmd>foldclose<cr>")
+vim.keymap.set("n", "<leader>mO", ufo.openAllFolds)
+vim.keymap.set("n", "<leader>mP", ufo.closeAllFolds)
+vim.keymap.set("n", "<leader>mo", "<cmd>foldopen<cr>")
+vim.keymap.set("n", "<leader>mp", "<cmd>foldclose<cr>")

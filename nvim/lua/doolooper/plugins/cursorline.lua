@@ -3,15 +3,15 @@ if not status then
 	return
 end
 
+local _, sherbet_colors = pcall(require, "sherbet.palette")
+
 cursorline.setup({
 	cursorline = {
-		enable = true,
-		timeout = 1000,
-		number = false,
+		enable = false,
 	},
 	cursorword = {
 		enable = true,
 		min_length = 3,
-		hl = { underline = true },
+		hl = { underline = false, fg = sherbet_colors.yellow, bg = sherbet_colors.ui_search },
 	},
 })

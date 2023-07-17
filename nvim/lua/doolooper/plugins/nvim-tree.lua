@@ -15,6 +15,9 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 nvimtree.setup({
 	-- change folder arrow icons
 	renderer = {
+		indent_markers = {
+			enable = true,
+		},
 		group_empty = true,
 		icons = {
 			glyphs = {
@@ -34,6 +37,9 @@ nvimtree.setup({
 	},
 	view = {
 		signcolumn = "no",
+	},
+	update_focused_file = {
+		enable = true,
 	},
 })
 

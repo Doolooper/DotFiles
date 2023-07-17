@@ -16,6 +16,8 @@ if not typescript_setup then
 	return
 end
 
+local ufo_status, _ = pcall(require, "ufo")
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -47,7 +49,13 @@ end
 
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
-
+-- enable ufo support
+if ufo_status then
+	capabilities.textDocument.foldingRange = {
+		dynamicRegistration = false,
+		lineFoldingOnly = true,
+	}
+end
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
 local signs = { Error = " ", Warn = " ", Hint = "⚑", Info = " " }
@@ -91,6 +99,20 @@ lspconfig["lua_ls"].setup({
 				library = {
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+		},
+	},
+})
+
+lspconfig.rust_analyzer.setup({
+	settings = {
+		["rust-analyzer"] = {
+			workspace = {
+				symbol = {
+					search = {
+						kind = "all_symbols",
+					},
 				},
 			},
 		},

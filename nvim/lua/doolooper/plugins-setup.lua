@@ -35,8 +35,7 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
-	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
-	use("shaunsingh/moonlight.nvim")
+	use("lewpoly/sherbet.nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -112,8 +111,6 @@ return packer.startup(function(use)
 	use("petertriho/nvim-scrollbar")
 	use("karb94/neoscroll.nvim")
 
-	use("gorbit99/codewindow.nvim")
-
 	use("kevinhwang91/nvim-hlslens")
 
 	use("kdheepak/lazygit.nvim")
@@ -129,6 +126,12 @@ return packer.startup(function(use)
 	use("luukvbaal/statuscol.nvim")
 
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
+	-- Current word highlight
+	use("yamatsum/nvim-cursorline")
+
+	-- Multiple cursors
+	use("mg979/vim-visual-multi")
 
 	if packer_bootstrap then
 		require("packer").sync()
