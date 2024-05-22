@@ -1,6 +1,6 @@
-local status, neoscroll = pcall(require, "neoscroll")
-if not status then
-	return
-end
-
-neoscroll.setup()
+return {
+  "karb94/neoscroll.nvim",
+  config = function()
+    require("neoscroll").setup({})
+  end,
+}
