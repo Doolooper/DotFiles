@@ -1,7 +1,7 @@
 return {
-  "arcticicestudio/nord-vim",
+  "folke/tokyonight.nvim",
   priority = 1000,
   config = function()
-    vim.cmd("colorscheme nord")
+    vim.cmd("colorscheme tokyonight")
   end,
 }

@@ -3,8 +3,15 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {},
+    },
   },
   config = function()
     -- import lspconfig plugin
@@ -15,6 +22,10 @@ return {
 
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+    -- import mason
+    local mason = require("mason")
+    local mason_tool_installer = require("mason-tool-installer")
 
     local keymap = vim.keymap -- for conciseness
 
@@ -83,11 +94,79 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- enable mason and configure icons
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    mason_lspconfig.setup({
+      -- list of servers for mason to install
+      ensure_installed = {
+        "tsserver",
+        "html",
+        "cssls",
+        "lua_ls",
+        "graphql",
+        "omnisharp",
+        "rust_analyzer",
+      },
+    })
+
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "codelldb",
+        "prettier",
+        "stylua",
+        "eslint_d",
+      },
+    })
+
     mason_lspconfig.setup_handlers({
-      -- default handler for installed servers
+      -- configure lua server (with special settings)
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
+        })
+      end,
+      ["tsserver"] = function()
+        -- configure tsserver
+        lspconfig["tsserver"].setup({
+          capabilities = capabilities,
+          filetypes = {
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+          },
+          settings = {
+            javascript = {
+              inlayHints = {
+                includeInlayEnumMemberValueHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayVariableTypeHints = true,
+              },
+            },
+            typescript = {
+              inlayHints = {
+                includeInlayEnumMemberValueHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayVariableTypeHints = true,
+              },
+            },
+          },
         })
       end,
       ["graphql"] = function()
@@ -114,10 +193,17 @@ return {
           },
         })
       end,
-      ["rust-analyzer"] = function()
+      ["rust_analyzer"] = function()
         lspconfig["rust_analyzer"].setup({
           settings = {
-            ["rust-analyzer"] = {
+            ["rust_analyzer"] = {
+              inlayHints = {
+                enable = true,
+                chainingHints = true,
+                typeHints = true,
+                parameterHints = true,
+                maxLength = 80,
+              },
               workspace = {
                 symbol = {
                   search = {

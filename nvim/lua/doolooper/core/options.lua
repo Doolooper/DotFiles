@@ -50,4 +50,7 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+opt.fillchars = [[eob:·,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+-- opt.spell = true
+-- opt.spelllang = "en_us"

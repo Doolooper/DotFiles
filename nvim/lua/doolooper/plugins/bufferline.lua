@@ -8,7 +8,7 @@ return {
       options = {
         diagnostics = "nvim_lsp",
         show_close_icon = true,
-        separator_style = "slope",
+        separator_style = "slant",
         hover = {
           enable = true,
           reveal = { "close" },

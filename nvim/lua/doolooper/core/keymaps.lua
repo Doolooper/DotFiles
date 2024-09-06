@@ -5,12 +5,14 @@ local keymap = vim.keymap
 keymap.set("n", "Q", "<nop>")
 
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save current buffer" })
-keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "Close current buffer" })
 keymap.set("n", "<leader>q", ":bp<bar>sp<bar>bn<bar>bd<CR>", { desc = "Close current buffer" })
 
 keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<Esc>", function()
+  vim.cmd("nohlsearch")
+  vim.cmd("NoiceDismiss")
+end, { desc = "Clear search highlights" })
 
 keymap.set("n", "x", '"_x', { desc = "Delete single character without copying into register" })
 keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yank" })

@@ -33,7 +33,7 @@ return {
         custom = { ".DS_Store" },
       },
       git = {
-        ignore = false,
+        ignore = true,
       },
       update_focused_file = {
         enable = true,

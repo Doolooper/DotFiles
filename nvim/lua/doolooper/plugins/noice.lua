@@ -32,7 +32,5 @@ return {
       },
     })
     -- set keymaps
-    local keymap = vim.keymap -- for conciseness
-    keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss noice messages" })
   end,
 }
