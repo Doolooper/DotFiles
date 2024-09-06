@@ -1,14 +1,21 @@
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/uew.omp.json)"
-eval "$(atuin init zsh --disable-up-arrow)"
-eval "$(fnm env --use-on-cd)"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+    eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+fi
+
+eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 source $HOME/.zsh/alias.zsh
 source $HOME/.zsh/completion.zsh
+source $HOME/.zsh/fzf.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+bindkey '^p' atuin-search
+
 SAVEHIST=1000
 HISTSIZE=999
+HISTDUP=erase
 setopt share_history 
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
@@ -37,6 +44,21 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
-export BAT_THEME="Nord"
-
 eval "$(zoxide init zsh)"
+
+function start_tmux_if_iterm() {
+    if [[ "$TERM_PROGRAM" == "iTerm.app" || "$TERM_PROGRAM" == "WezTerm" ]]; then
+        if command -v tmux &> /dev/null; then
+            if tmux ls &> /dev/null; then
+                tmux attach-session -t $(tmux ls | awk -F: '{print $1}' | head -n 1)
+            else
+                tmux new-session
+            fi
+        else
+            echo "tmux is not installed"
+        fi
+    fi
+}
+
+start_tmux_if_iterm
+
