@@ -4,9 +4,8 @@ source "$CONFIG_DIR/settings/icon_map.sh"
 
 update_windows() {
     windows=$(aerospace list-windows --workspace focused --format "id=%{window-id},name=%{app-name}")
-    sketchybar --remove '/front_app.*/'
+    sketchybar --remove '/front_app\..*/'
     IFS=$'\n' read -rd '' -a windowsArr <<< "$windows"
-    index=0
     for i in "${windowsArr[@]}"; do
         IFS=',' read -r -a window <<< "$i"
         app_id="${window[0]//id=/}"
@@ -21,7 +20,6 @@ update_windows() {
             background.color=$FRONT_APP_COLOR \
             background.border_color=$FRONT_APP_COLOR \
             click_script="aerospace focus --window-id ${app_id}"
-        ((index++))
     done
 }
 

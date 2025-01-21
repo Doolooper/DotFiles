@@ -117,8 +117,8 @@ r = [
 
 [mode.move.binding]
 esc = [
-    'mode main',
-    'exec-and-forget sketchybar --trigger hide_message'
+  'mode main',
+  'exec-and-forget sketchybar --trigger hide_message'
 ]
 h = 'move left'
 j = 'move down'
@@ -127,55 +127,46 @@ l = 'move right'
 1 = [
   'move-node-to-workspace 1',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 2 = [
   'move-node-to-workspace 2',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 3 = [
   'move-node-to-workspace 3',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 4 = [
   'move-node-to-workspace 4',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 5 = [
   'move-node-to-workspace 5',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 6 = [
   'move-node-to-workspace 6',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 7 = [
   'move-node-to-workspace 7',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 8 = [
   'move-node-to-workspace 8',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 9 = [
   'move-node-to-workspace 9',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 
@@ -183,70 +174,61 @@ cmd-1 = [
   'move-node-to-workspace 1',
   'workspace 1',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-2 = [
   'move-node-to-workspace 2',
   'workspace 2',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-3 = [
   'move-node-to-workspace 3',
   'workspace 3',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-4 = [
   'move-node-to-workspace 4',
   'workspace 4',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-5 = [
   'move-node-to-workspace 5',
   'workspace 5',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-6 = [
   'move-node-to-workspace 6',
   'workspace 6',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-7 = [
   'move-node-to-workspace 7',
   'workspace 7',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-8 = [
   'move-node-to-workspace 8',
   'workspace 8',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 cmd-9 = [
   'move-node-to-workspace 9',
   'workspace 9',
   'exec-and-forget sketchybar --trigger hide_message',
-  'exec-and-forget sketchybar_bottom --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
   'mode main'
 ]
 
 [mode.resize.binding]
 esc = [
-    'mode main',
-    'exec-and-forget sketchybar --trigger hide_message'
+  'mode main',
+  'exec-and-forget sketchybar --trigger hide_message'
 ]
 h = ['resize width -64']
 j = ['resize height -64']
@@ -256,8 +238,8 @@ r = ['flatten-workspace-tree']
 
 [mode.join.binding]
 esc = [
-    'mode main',
-    'exec-and-forget sketchybar --trigger hide_message'
+  'mode main',
+  'exec-and-forget sketchybar --trigger hide_message'
 ]
 h = 'join-with left'
 j = 'join-with down'
@@ -316,3 +298,4 @@ run = ['move-node-to-workspace 6']
 [[on-window-detected]]
 check-further-callbacks = true
 run = ['move-node-to-workspace 1']  
+

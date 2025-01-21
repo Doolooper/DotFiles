@@ -1,4 +1,5 @@
-sketchybar_bottom --add event aerospace_workspace_changed
+sketchybar_bottom --add event aerospace_workspace_changed \
+    --add event update_windows
 
 spaces=$(aerospace list-workspaces --all)
 
@@ -16,7 +17,7 @@ for sid in $spaces; do
         label+=$app_icon
     done
     sketchybar_bottom --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_changed space_windows_change \
+        --subscribe space.$sid aerospace_workspace_changed update_windows \
         --set space.$sid \
         label="$label" \
         label.font="sketchybar-app-font:Regular:15" \
