@@ -1,1 +1,8 @@
 .DS_Store
+zed/conversation
+zed/embeddings
+zed/prompts
+zed/.tmp*
+
+tmux/plugins
+tmux/resurrect
