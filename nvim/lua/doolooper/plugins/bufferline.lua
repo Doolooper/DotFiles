@@ -23,7 +23,7 @@ return {
         },
       },
     })
-    vim.keymap.set("n", "<M-Tab>", vim.cmd.BufferLineCycleNext)
-    vim.keymap.set("n", "<S-M-Tab>", vim.cmd.BufferLineCyclePrev)
+    vim.keymap.set("n", "<M-]>", vim.cmd.BufferLineCycleNext)
+    vim.keymap.set("n", "<M-}>", vim.cmd.BufferLineCyclePrev)
   end,
 }

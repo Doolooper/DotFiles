@@ -1,0 +1,22 @@
+update () {
+    BLUE='\033[0;34m'
+    NC='\033[0m'
+    echo "${BLUE}update brew pacakges${NC}"
+    brew update -q
+    brew upgrade -q
+    brew cleanup -q
+    echo "${BLUE}update tmux plugins${NC}"
+    ~/.tmux/plugins/tpm/bin/update_plugins all &> /dev/null
+    echo "${BLUE}update neovim plugins${NC}"
+    nvim --headless "+Lazy! sync" +qa &> /dev/null
+    echo "${BLUE}update rust${NC}"
+    rustup update 
+    echo "${BLUE}update deno${NC}"
+    deno upgrade
+    echo "${BLUE}update vscode extensions${NC}"
+    code --update-extensions
+}
+
+cpy() {
+  cat "$1" | pbcopy
+}

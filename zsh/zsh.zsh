@@ -1,15 +1,24 @@
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+    eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.json)"
 fi
 
 eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-source $HOME/.zsh/alias.zsh
-source $HOME/.zsh/completion.zsh
-source $HOME/.zsh/fzf.zsh
+source $HOME/.config/zsh/alias.zsh
+source $HOME/.config/zsh/completion.zsh
+source $HOME/.config/zsh/fzf.zsh
+source $HOME/.config/zsh/functions.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/doolooper/.config/zsh/completions:"* ]]; then 
+    export FPATH="/Users/doolooper/.config/zsh/completions:$FPATH"
+fi
+
+export PATH="$HOME/.bin:$PATH"
+
+source "/Users/doolooper/.deno/env"
 
 bindkey '^p' atuin-search
 
@@ -59,6 +68,7 @@ function start_tmux_if_iterm() {
         fi
     fi
 }
+
 
 start_tmux_if_iterm
 

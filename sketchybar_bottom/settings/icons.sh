@@ -1,0 +1,16 @@
+# Download/Upload Speed Icons
+UPLOAD=
+DOWNLOAD=
+
+CPU=
+MEMORY=
+HDD=
+
+PACKAGE=
+NVIM=
+
+PLAYER_NEXT=
+PLAYER_PREV=
+PLAY=
+PAUSE=
+SPOTIFY=

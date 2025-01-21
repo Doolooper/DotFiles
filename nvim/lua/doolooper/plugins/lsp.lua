@@ -108,19 +108,17 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "tsserver",
         "html",
         "cssls",
         "lua_ls",
         "graphql",
-        "omnisharp",
         "rust_analyzer",
+        "ts_ls",
       },
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "codelldb",
         "prettier",
         "stylua",
         "eslint_d",
@@ -132,41 +130,6 @@ return {
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
-        })
-      end,
-      ["tsserver"] = function()
-        -- configure tsserver
-        lspconfig["tsserver"].setup({
-          capabilities = capabilities,
-          filetypes = {
-            "typescript",
-            "typescriptreact",
-            "typescript.tsx",
-          },
-          settings = {
-            javascript = {
-              inlayHints = {
-                includeInlayEnumMemberValueHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayVariableTypeHints = true,
-              },
-            },
-            typescript = {
-              inlayHints = {
-                includeInlayEnumMemberValueHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayVariableTypeHints = true,
-              },
-            },
-          },
         })
       end,
       ["graphql"] = function()

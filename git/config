@@ -1,0 +1,33 @@
+[user]
+	name = Mahdi Harati
+	email = doolooper@outlook.com
+[alias]
+	st = status -sb
+	c = commit 
+	cm = commit -m
+	undo = reset --soft HEAD^
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	l1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	l2 = log --graph --oneline --decorate --all
+	l3 = !git log --oneline | grep
+	l4 = log -p -1
+	l5 = "!f() { \
+        	git log --after=\"$(date -j -v-$1d +%Y-%m-%d)\" --oneline; \
+	}; f"
+	f = fetch --all --prune
+    ff = pull --no-edit --ff-only
+[core]
+    pager = delta
+	editor = nvim
+[init]
+	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    line-numbers = true
+    true-color = always
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    colorMoved = default
