@@ -1,3 +1,28 @@
+backup () {
+    folders=(
+        "aerospace"
+        "bat"
+        "borders"
+        "btop"
+        "fastfetch"
+        "gh"
+        "git"
+        "nvim"
+        "ohmyposh"
+        "powershell"
+        "sketchybar"
+        "sketchybar_bottom"
+        "tmux"
+        "wezterm"
+        "zed"
+        "zsh"
+    )
+    for folder in "${folders[@]}"; do
+        rm -rf "$HOME/Codes/Doolooper/DotFiles/$folder"
+        cp -rf "$HOME/.config/$folder" "$HOME/Codes/Doolooper/DotFiles/$folder"
+    done
+}
+
 update () {
     BLUE='\033[0;34m'
     NC='\033[0m'

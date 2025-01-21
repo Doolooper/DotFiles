@@ -6,6 +6,9 @@ function __icon_map() {
    "Live")
         icon_result=":ableton:"
         ;;
+   "Activity Monitor")
+        icon_result=":activity_monitor:"
+        ;;
    "Adobe Bridge"*)
         icon_result=":adobe_bridge:"
         ;;
@@ -159,6 +162,9 @@ function __icon_map() {
    "DaVinci Resolve")
         icon_result=":davinciresolve:"
         ;;
+   "DBeaver")
+        icon_result=":dbeaver:"
+        ;;
    "Deezer")
         icon_result=":deezer:"
         ;;
@@ -228,6 +234,9 @@ function __icon_map() {
    "Fork")
         icon_result=":fork:"
         ;;
+   "Freeform")
+        icon_result=":freeform:"
+        ;;
    "FreeTube")
         icon_result=":freetube:"
         ;;
@@ -272,6 +281,9 @@ function __icon_map() {
         ;;
    "Adobe InDesign"* | "InDesign")
         icon_result=":indesign:"
+        ;;
+   "Infuse")
+        icon_result=":infuse:"
         ;;
    "Inkdrop")
         icon_result=":inkdrop:"
@@ -492,6 +504,9 @@ function __icon_map() {
    "Phoenix Slides")
         icon_result=":phoenix_slides:"
         ;;
+   "Photos")
+        icon_result=":photos:"
+        ;;
    "Adobe Photoshop"*)
         icon_result=":photoshop:"
         ;;
@@ -609,6 +624,12 @@ function __icon_map() {
    "superProductivity")
         icon_result=":superproductivity:"
         ;;
+   "Surfshark")
+        icon_result=":surfshark:"
+        ;;
+   "Tabby")
+        icon_result=":tabby:"
+        ;;
    "Tana")
         icon_result=":tana:"
         ;;
@@ -623,6 +644,9 @@ function __icon_map() {
         ;;
    "Typora")
         icon_result=":text:"
+        ;;
+   "TextEdit")
+        icon_result=":textedit:"
         ;;
    "Microsoft To Do" | "Things")
         icon_result=":things:"
