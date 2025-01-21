@@ -6,3 +6,5 @@ zed/.tmp*
 
 tmux/plugins
 tmux/resurrect
+
+nvim/lazy-lock.json
