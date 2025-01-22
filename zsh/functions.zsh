@@ -3,6 +3,7 @@ backup () {
         "aerospace"
         "bat"
         "borders"
+        "brewfile"
         "btop"
         "fastfetch"
         "gh"
@@ -40,6 +41,8 @@ update () {
     deno upgrade
     echo "${BLUE}update vscode extensions${NC}"
     code --update-extensions
+    echo "${BLUE}update brew file${NC}"
+    brew file update
 }
 
 cpy() {
