@@ -3,9 +3,6 @@ source "$CONFIG_DIR/settings/colors.sh"
 source "$CONFIG_DIR/settings/icon_map.sh"
 
 update_windows() {
-
-    echo "SENDER $SENDER, INFO $INFO"
-
     windows=$(aerospace list-windows --all --format "id=%{window-id},name=%{app-name}")
     focusedWindow=$(aerospace list-windows --focused --format "id=%{window-id},name=%{app-name}")
     IFS=',' read -r -a focusedWindow <<< "$focusedWindow"
