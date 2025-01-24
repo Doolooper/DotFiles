@@ -56,7 +56,7 @@ zmodload -i zsh/complist
 eval "$(zoxide init zsh)"
 
 function start_tmux_if_iterm() {
-    if [[ "$TERM_PROGRAM" == "iTerm.app" || "$TERM_PROGRAM" == "WezTerm" || "$TERM_PROGRAM" == "ghostty" ]]; then
+    if [[ "$TERM_PROGRAM" == "iTerm.app" || "$TERM_PROGRAM" == "ghostty" ]]; then
         if command -v tmux &> /dev/null; then
             if tmux ls &> /dev/null; then
                 tmux attach-session -t $(tmux ls | awk -F: '{print $1}' | head -n 1)
