@@ -1,0 +1,11 @@
+
+2025/01/23 (19:07:56) | ===> btop++ v.1.4.0
+2025/01/23 (19:07:56) | DEBUG: Running in DEBUG mode!
+2025/01/23 (19:07:56) | INFO: Logger set to DEBUG
+2025/01/23 (19:07:56) | DEBUG: Using locale en_CA.UTF-8
+2025/01/23 (19:07:56) | INFO: Running on /dev/ttys001
+2025/01/23 (19:07:56) | DEBUG: get_sensors(): show_coretemp=1 check_temp=1
+2025/01/23 (19:07:56) | DEBUG: checking intel
+2025/01/23 (19:07:56) | DEBUG: no intel sensors found
+2025/01/23 (19:07:56) | DEBUG: Loading theme file: /Users/doolooper/.config/btop/themes/kanagawa.theme
+2025/01/23 (19:07:58) | INFO: Quitting! Runtime: 00:00:02

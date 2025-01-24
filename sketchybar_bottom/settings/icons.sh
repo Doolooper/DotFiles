@@ -5,6 +5,7 @@ DOWNLOAD=
 CPU=
 MEMORY=
 HDD=
+UPTIME=
 
 PACKAGE=
 NVIM=

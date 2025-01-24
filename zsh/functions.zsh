@@ -18,10 +18,20 @@ backup () {
         "zed"
         "zsh"
     )
+
+    pwd=$(pwd)
+
     for folder in "${folders[@]}"; do
         rm -rf "$HOME/Codes/Doolooper/DotFiles/$folder"
         cp -rf "$HOME/.config/$folder" "$HOME/Codes/Doolooper/DotFiles/$folder"
     done
+    
+    cd ~/Codes/Doolooper/DotFiles
+    git add .
+    git commit -m "backup updated on $(date +'%Y-%m-%d %H:%M')"
+    git push
+    git clean -fxd
+    cd $pwd
 }
 
 update () {

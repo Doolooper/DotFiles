@@ -80,6 +80,7 @@ source "$ITEM_DIR/network.sh"
 source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/memory.sh"
 source "$ITEM_DIR/disk.sh"
+source "$ITEM_DIR/uptime.sh"
 source "$ITEM_DIR/package_manager.sh"
 
 # sketchybar_bottom --hotload on
