@@ -1,4 +1,5 @@
 source "$CONFIG_DIR/settings/icons.sh"
+source "$CONFIG_DIR/settings/colors.sh"
 
 media_change() {
     PLAYER="$(echo "$INFO" | jq -r '.app')"
@@ -6,13 +7,29 @@ media_change() {
     CURRENTARTIST="$(echo "$INFO" | jq -r '.artist')"
     CURRENTSONG="$(echo "$INFO" | jq -r '.title')"
 
-    if [[ "$PLAYER" == "Spotify" ]]; then
+    if [[ "$PLAYER" == "Spotify" || "$PLAYER" == "Podcasts" ]]; then
         ARGS=(drawing=on)
         BUTTON_ARGS=(drawing=on)
         if [[ "$PLAYERSTATE" == "playing" ]]; then
-            ARGS+=(icon=$SPOTIFY)
+            case "$PLAYER" in
+                "Spotify")
+                    ARGS+=(icon="$SPOTIFY")
+                    ARGS+=(background.color="$SPOTIFY_COLOR")
+                    BUTTON_ARGS+=(background.color="$SPOTIFY_COLOR")
+                    ;;
+                "Podcasts")
+                    ARGS+=(icon="$PODCAST")
+                    ARGS+=(background.color="$PODCAST_COLOR")
+                    BUTTON_ARGS+=(background.color="$PODCAST_COLOR")
+                    ;;
+                *)
+                    ARGS+=(icon=$MUISC)
+                    ARGS+=(background.color="$PLAY_COLOR")
+                    BUTTON_ARGS+=(background.color="$PLAY_COLOR")
+                    ;;
+            esac
         else
-            ARGS+=(icon=$PAUSE)
+            ARGS+=(icon="$PAUSE")
         fi
         ARGS+=(label="$CURRENTARTIST: $CURRENTSONG")
     else
@@ -21,8 +38,8 @@ media_change() {
     fi
 
     sketchybar_bottom --set music "${ARGS[@]}" \
-        --set music.next "${BUTTON_ARGS}" \
-        --set music.prev "${BUTTON_ARGS}"
+        --set music.next "${BUTTON_ARGS[@]}" \
+        --set music.prev "${BUTTON_ARGS[@]}"
 }
 
 case "$SENDER" in
@@ -35,13 +52,13 @@ case "$SENDER" in
     "mouse.clicked")
         case "$NAME" in
             "music.prev")
-                osascript -e 'tell application "Spotify" to previous track'
+                nowplaying-cli previous
                 ;;
             "music.next")
-                osascript -e 'tell application "Spotify" to next track'
+                nowplaying-cli next
                 ;;
             "music")
-                osascript -e 'tell application "Spotify" to playpause'
+                nowplaying-cli togglePlayPause
                 ;;
         esac
         ;;

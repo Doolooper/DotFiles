@@ -52,7 +52,7 @@ defaults=(
 
 	# background
 	background.height=25
-	background.border_width=1
+	background.border_width=0
 	background.padding_left=3
 	background.padding_right=3
 	background.corner_radius=$ITEM_CORNER_RADIUS

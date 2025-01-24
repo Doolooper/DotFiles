@@ -27,7 +27,6 @@ update_windows() {
             icon=$app_icon \
             icon.font="sketchybar-app-font:Regular:12" \
             background.color=$color \
-            background.border_color=$color \
             click_script="aerospace focus --window-id ${app_id}"
     done
 }

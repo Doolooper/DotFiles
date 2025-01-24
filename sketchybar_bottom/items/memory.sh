@@ -4,5 +4,4 @@ sketchybar_bottom --add item memory right \
     icon=$MEMORY \
     update_freq=2 \
     background.color=$MEMORY_COLOR \
-    background.border_color=$MEMORY_COLOR \
     script="$PLUGIN_DIR/memory.sh"

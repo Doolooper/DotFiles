@@ -14,7 +14,6 @@ sketchybar --add event send_message \
     --set message.popup \
     width=dynamic \
     background.color=$POPUP_COLOR \
-    background.border_color=$BORDER_COLOR \
     background.border_width=1 \
     background.height=dynamic \
     label.padding_left=10 \

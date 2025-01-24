@@ -25,8 +25,10 @@ volume_change() {
     esac
 
     INFO=$(printf "%02d" $INFO)
-    if [[ $device == *"AirPods"* ]]; then
+    if [[ "$device" == *"AirPods"* ]]; then
         ICON=$AIRPOD
+    elif [[ "$device" == "External Headphones" ]]; then
+        ICON=$HEADPHONES
     fi
 
     sketchybar --set volume icon=$ICON label=$INFO \

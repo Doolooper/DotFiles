@@ -4,7 +4,6 @@ sketchybar_bottom --add item music.prev center \
     label.drawing=off \
     icon=$PLAYER_PREV \
     background.color=$PLAYER_COLOR \
-    background.border_color=$PLAYER_COLOR \
     script="$PLUGIN_DIR/music.sh" \
     --subscribe music.prev mouse.clicked
 
@@ -15,9 +14,8 @@ sketchybar_bottom \
     label="" \
     label.scroll_duration=300 \
     label.max_chars=20 \
-    icon=$SPOTIFY \
+    icon=$MUSIC \
     background.color=$PLAYER_COLOR \
-    background.border_color=$PLAYER_COLOR \
     updates=on \
     script="$PLUGIN_DIR/music.sh" \
     --subscribe music media_change space_windows_change mouse.clicked
@@ -28,6 +26,5 @@ sketchybar_bottom --add item music.next center \
     label.drawing=off \
     icon=$PLAYER_NEXT \
     background.color=$PLAYER_COLOR \
-    background.border_color=$PLAYER_COLOR \
     script="$PLUGIN_DIR/music.sh" \
     --subscribe music.next mouse.clicked

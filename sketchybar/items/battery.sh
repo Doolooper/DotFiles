@@ -4,5 +4,4 @@ sketchybar --add item battery right \
     icon=$BATTERY_FULL \
     update_freq=5 \
     background.color=$BATTERY_COLOR \
-    background.border_color=$BATTERY_COLOR \
     script="$PLUGIN_DIR/battery.sh"

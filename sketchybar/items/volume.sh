@@ -5,7 +5,6 @@ sketchybar --add item volume right \
     popup.align=center \
     icon=$VOLUME_0 \
     background.color=$VOLUME_COLOR \
-    background.border_color=$VOLUME_COLOR \
     script="$PLUGIN_DIR/volume.sh" \
     --subscribe volume volume_change mouse.clicked mouse.exited.global \
     --add bracket volume.bracket volume \

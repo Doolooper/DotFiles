@@ -3,7 +3,6 @@ sketchybar --add item wifi right \
     label.drawing=off \
     icon=$WIFI_LOADING \
     background.color=$WIFI_COLOR \
-    background.border_color=$WIFI_COLOR \
     script="$PLUGIN_DIR/wifi.sh" \
     --subscribe wifi wifi_change system_woke mouse.clicked \
     --add bracket wifi.bracket wifi \

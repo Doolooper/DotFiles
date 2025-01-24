@@ -268,10 +268,6 @@ if.app-id = 'com.github.wez.wezterm'
 run = ['move-node-to-workspace 3']  
 
 [[on-window-detected]]
-if.app-id = 'com.googlecode.iterm2'              
-run = ['move-node-to-workspace 3']  
-
-[[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'              
 run = ['move-node-to-workspace 4']  
 
@@ -293,6 +289,14 @@ run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'              
+run = ['move-node-to-workspace 6']  
+
+[[on-window-detected]]
+if.app-id = 'com.apple.podcasts'              
+run = ['move-node-to-workspace 6']  
+
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'              
 run = ['move-node-to-workspace 6']  
 
 [[on-window-detected]]
