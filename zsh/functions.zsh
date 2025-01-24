@@ -7,6 +7,7 @@ backup () {
         "btop"
         "fastfetch"
         "gh"
+        "ghostty"
         "git"
         "nvim"
         "ohmyposh"
@@ -14,7 +15,6 @@ backup () {
         "sketchybar"
         "sketchybar_bottom"
         "tmux"
-        "wezterm"
         "zed"
         "zsh"
     )

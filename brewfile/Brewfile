@@ -8,6 +8,7 @@ brew bat
 brew btop
 brew ca-certificates
 brew cava
+brew certifi
 brew dust
 brew eza
 brew fastfetch
@@ -46,6 +47,7 @@ brew luajit
 brew luv
 brew lz4
 brew mas
+brew mpdecimal
 brew mpfr
 brew msgpack
 brew ncurses
@@ -60,7 +62,9 @@ brew pipes-sh
 brew pkgconf
 brew pmix
 brew portaudio
+brew readline
 brew ripgrep
+brew sqlite
 brew superfile
 brew switchaudio-osx
 brew television
