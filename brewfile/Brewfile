@@ -8,7 +8,6 @@ brew bat
 brew btop
 brew ca-certificates
 brew cava
-brew certifi
 brew dust
 brew eza
 brew fastfetch
@@ -26,7 +25,6 @@ brew go
 brew go@1.22
 brew grep
 brew helix
-brew httpie
 brew hwloc
 brew ifstat
 brew iniparser
@@ -47,7 +45,7 @@ brew lua
 brew luajit
 brew luv
 brew lz4
-brew mpdecimal
+brew mas
 brew mpfr
 brew msgpack
 brew ncurses
@@ -62,10 +60,7 @@ brew pipes-sh
 brew pkgconf
 brew pmix
 brew portaudio
-brew python@3.13
-brew readline
 brew ripgrep
-brew sqlite
 brew superfile
 brew switchaudio-osx
 brew television
@@ -86,6 +81,7 @@ brew zstd
 tap homebrew/cask
 cask alt-tab
 cask bitwarden
+cask bruno
 cask font-hack-nerd-font
 cask font-jetbrains-mono-nerd-font
 cask font-meslo-lg-nerd-font

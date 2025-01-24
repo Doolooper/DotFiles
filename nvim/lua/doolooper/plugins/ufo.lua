@@ -36,17 +36,9 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "mo", require("ufo").openAllFolds)
-    vim.keymap.set("n", "mp", require("ufo").closeAllFolds)
-    vim.keymap.set("n", "mm", function()
-      local fold_closed = vim.fn.foldclosed(".")
-      if fold_closed == -1 then
-        vim.cmd("foldclose")
-      else
-        vim.cmd("foldopen")
-      end
-    end)
-    vim.keymap.set("n", "mk", function()
+    vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+    vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+    vim.keymap.set("n", "zk", function()
       local winid = require("ufo").peekFoldedLinesUnderCursor()
       if not winid then
         -- choose one of coc.nvim and nvim lsp
