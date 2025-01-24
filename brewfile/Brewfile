@@ -47,7 +47,6 @@ brew lua
 brew luajit
 brew luv
 brew lz4
-brew mas
 brew mpdecimal
 brew mpfr
 brew msgpack
