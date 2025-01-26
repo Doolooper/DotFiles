@@ -5,4 +5,5 @@ sketchybar_bottom --add item uptime right \
     update_freq=60 \
     background.color=$UPTIME_COLOR \
     background.border_color=$UPTIME_COLOR \
-    script="$PLUGIN_DIR/uptime.sh"
+    script="$PLUGIN_DIR/uptime.sh" \
+    --subscribe uptime system_woke
