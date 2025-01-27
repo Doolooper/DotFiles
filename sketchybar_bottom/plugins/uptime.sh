@@ -7,7 +7,7 @@ hours=0
 minutes=0
 
 # Parse the extracted uptime info
-if [[ "$uptime_info" =~ ([0-9]+)\ days ]]; then
+if [[ "$uptime_info" =~ ([0-9]+)\ days? ]]; then
     days=${BASH_REMATCH[1]}
     uptime_info=${uptime_info/${BASH_REMATCH[0]}/}
 fi

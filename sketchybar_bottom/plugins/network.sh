@@ -9,14 +9,14 @@ if [ -z "$CONNECT_STATUS" ]; then
     sketchybar_bottom -m --set $NAME icon.drawing=on icon=$NO_NETWORK
 else
     if [ $UP_SPEED -gt 999 ]; then
-        UP_SPEED=$(echo $UP_SPEED | awk '{ printf "%.1f mbs", $1 / 1024}')
+        UP_SPEED=$(echo $UP_SPEED | awk '{ printf ($1 / 1024 < 10 ? "0%.1f mbs" : "%.1f mbs"), $1 / 1024 }')
     else
-        UP_SPEED=$(echo $UP_SPEED | awk '{ printf "%.1f kbs", $1}')
+        UP_SPEED=$(echo $UP_SPEED | awk '{ printf ($1 < 10 ? "0%.1f kbs" : "%.1f kbs"), $1}')
     fi
     if [ $DOWN_SPEED -gt 999 ]; then
-        DOWN_SPEED=$(echo $DOWN_SPEED | awk '{ printf "%.1f mbs", $1 / 1024}')
+        DOWN_SPEED=$(echo $DOWN_SPEED | awk '{ printf ($1 / 1024 < 10 ? "0%.1f mbs" : "%.1f mbs"), $1 / 1024 }')
     else
-        DOWN_SPEED=$(echo $DOWN_SPEED | awk '{ printf "%.1f kbs", $1}')
+        DOWN_SPEED=$(echo $DOWN_SPEED | awk '{ printf ($1 < 10 ? "0%.1f kbs" : "%.1f kbs"), $1}')
     fi
     sketchybar_bottom --set network_up label="$UP_SPEED" \
         --set network_down label="$DOWN_SPEED"
