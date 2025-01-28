@@ -64,6 +64,7 @@ brew pmix
 brew portaudio
 brew readline
 brew ripgrep
+brew spicetify-cli
 brew sqlite
 brew superfile
 brew switchaudio-osx
@@ -71,6 +72,7 @@ brew television
 brew tlrc
 brew tmux
 brew tree-sitter
+brew tty-clock
 brew unibilium
 brew utf8proc
 brew wget

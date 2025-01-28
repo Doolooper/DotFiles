@@ -14,7 +14,9 @@ backup () {
         "powershell"
         "sketchybar"
         "sketchybar_bottom"
+        "spicetify"
         "tmux"
+        "vscode"
         "zed"
         "zsh"
     )
