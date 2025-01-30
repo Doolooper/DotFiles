@@ -21,14 +21,18 @@ elif [[ "$uptime_info" =~ ([0-9]+)\ mins ]]; then
     minutes=${BASH_REMATCH[1]}
 fi
 
+days=$((10#$days))
+hours=$((10#$hours))
+minutes=$((10#$minutes))
+
 output=""
-if [[ $days -gt 0 ]]; then
+if [[ "$days" -gt 0 ]]; then
     output+="${days}d "
 fi
-if [[ $hours -gt 0 ]]; then
+if [[ "$hours" -gt 0 ]]; then
     output+="${hours}h "
 fi
-if [[ $minutes -gt 0 ]]; then
+if [[ "$minutes" -gt 0 ]]; then
     output+="${minutes}m"
 fi
 
