@@ -294,6 +294,9 @@ function __icon_map() {
    "Insomnia")
         icon_result=":insomnia:"
         ;;
+   "iPhone Mirroring")
+        icon_result=":iphone_mirroring:"
+        ;;
    "Iris")
         icon_result=":iris:"
         ;;
@@ -323,6 +326,12 @@ function __icon_map() {
         ;;
    "kitty")
         icon_result=":kitty:"
+        ;;
+   "Kodi")
+        icon_result=":kodi:"
+        ;;
+   "LanguageTool for Desktop")
+        icon_result=":languagetool_for_desktop:"
         ;;
    "League of Legends")
         icon_result=":league_of_legends:"
@@ -468,6 +477,9 @@ function __icon_map() {
    "ChatGPT")
         icon_result=":openai:"
         ;;
+   "OpenAI Translator")
+        icon_result=":openai_translator:"
+        ;;
    "OpenVPN Connect")
         icon_result=":openvpn_connect:"
         ;;
@@ -491,6 +503,9 @@ function __icon_map() {
         ;;
    "Parsec")
         icon_result=":parsec:"
+        ;;
+   "Passwords")
+        icon_result=":passwords:"
         ;;
    "Preview" | "预览" | "Skim" | "zathura" | "Aperçu" | "プレビュー")
         icon_result=":pdf:"
@@ -570,6 +585,9 @@ function __icon_map() {
    "Replit")
         icon_result=":replit:"
         ;;
+   "Repo Prompt")
+        icon_result=":repo_prompt:"
+        ;;
    "Rider" | "JetBrains Rider")
         icon_result=":rider:"
         ;;
@@ -587,6 +605,9 @@ function __icon_map() {
         ;;
    "Sequel Pro")
         icon_result=":sequel_pro:"
+        ;;
+   "Session")
+        icon_result=":session:"
         ;;
    "Setapp")
         icon_result=":setapp:"
@@ -617,6 +638,9 @@ function __icon_map() {
         ;;
    "Spotlight")
         icon_result=":spotlight:"
+        ;;
+   "Studio 3T")
+        icon_result=":studio_3t:"
         ;;
    "Sublime Text")
         icon_result=":sublime_text:"
@@ -705,6 +729,9 @@ function __icon_map() {
    "Warp")
         icon_result=":warp:"
         ;;
+   "Weather")
+        icon_result=":weather:"
+        ;;
    "WebStorm")
         icon_result=":web_storm:"
         ;;
@@ -722,6 +749,9 @@ function __icon_map() {
         ;;
    "Xcode")
         icon_result=":xcode:"
+        ;;
+   "Yandex Browser"  | "Yandex Browser" | "Yandex")
+        icon_result=":yandex_bower:"
         ;;
    "Yandex Music")
         icon_result=":yandex_music:"

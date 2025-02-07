@@ -1,6 +1,7 @@
 // https://zed.dev/docs/configuring-zed
 {
   // settings
+  "icon_theme": "Material Icon Theme",
   "theme": "Kanagawa Dragon",
   "features": {
     "copilot": false
