@@ -4,6 +4,7 @@
   "icon_theme": "Material Icon Theme",
   "theme": "Kanagawa Dragon",
   "features": {
+    "edit_prediction_provider": "zed",
     "copilot": false
   },
   "toolbar": {
