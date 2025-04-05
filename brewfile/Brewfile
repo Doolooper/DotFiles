@@ -2,6 +2,7 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew atac
 brew atuin
 brew bash
 brew bat
@@ -23,7 +24,6 @@ brew git
 brew git-delta
 brew gmp
 brew go
-brew go@1.22
 brew grep
 brew helix
 brew hwloc
@@ -41,6 +41,8 @@ brew libssh2
 brew libunistring
 brew libuv
 brew libvterm
+brew lld
+brew llvm
 brew lpeg
 brew lua
 brew luajit
@@ -62,6 +64,7 @@ brew pipes-sh
 brew pkgconf
 brew pmix
 brew portaudio
+brew python@3.13
 brew readline
 brew ripgrep
 brew spicetify-cli
@@ -116,6 +119,8 @@ tap jesseduffield/lazygit
 tap jesseduffield/lazynpm
 brew lazynpm
 
+tap julien-cpsn/atac
+
 tap nikitabobko/tap
 cask aerospace
 
@@ -123,5 +128,5 @@ tap rcmdnk/file
 brew brew-file
 
 # App Store applications
-appstore 1444383602 Goodnotes (6.6.4)
+appstore 1444383602 Goodnotes (6.6.18)
 appstore 497799835 Xcode (16.2)
