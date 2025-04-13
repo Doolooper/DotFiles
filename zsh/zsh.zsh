@@ -53,6 +53,12 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/doolooper/.docker/completions $fpath)
+
+compinit
+# End of Docker CLI completions
+
 eval "$(zoxide init zsh)"
 
 function start_tmux_if_iterm() {
