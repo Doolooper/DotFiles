@@ -6,4 +6,4 @@ sketchybar_bottom --add item homebrew right \
     background.color=$PAKCAGE_MANAGER_COLOR \
     background.border_color=$PAKCAGE_MANAGER_COLOR \
     script="$PLUGIN_DIR/package_manager.sh" \
-    --subscribe homebrew system_woke
+    --subscribe homebrew system_woke mouse.clicked

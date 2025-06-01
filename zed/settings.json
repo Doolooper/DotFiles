@@ -14,6 +14,9 @@
   "scrollbar": {
     "show": "never"
   },
+  "minimap": {
+    "show": "always"
+  },
   "tab_bar": {
     "show": false
   },
