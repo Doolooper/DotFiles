@@ -16,7 +16,7 @@ if [[ ":$FPATH:" != *":/Users/doolooper/.config/zsh/completions:"* ]]; then
     export FPATH="/Users/doolooper/.config/zsh/completions:$FPATH"
 fi
 
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:/Applications/Docker.app/Contents/Resources/bin/:$PATH"
 
 source "/Users/doolooper/.deno/env"
 
@@ -39,6 +39,7 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 bindkey '\e' kill-whole-line
 
+fpath=(/Users/doolooper/.docker/completions $fpath)
 # Initialize the completion system
 autoload -Uz compinit
 
@@ -52,12 +53,6 @@ fi
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/doolooper/.docker/completions $fpath)
-
-compinit
-# End of Docker CLI completions
 
 eval "$(zoxide init zsh)"
 

@@ -6,7 +6,9 @@ brew atac
 brew atuin
 brew bash
 brew bat
+brew brotli
 brew btop
+brew c-ares
 brew ca-certificates
 brew cava
 brew certifi
@@ -27,6 +29,7 @@ brew go
 brew grep
 brew helix
 brew hwloc
+brew icu4c@77
 brew ifstat
 brew iniparser
 brew isl
@@ -37,12 +40,12 @@ brew libevent
 brew libgit2
 brew libidn2
 brew libmpc
+brew libnghttp2
 brew libssh2
 brew libunistring
 brew libuv
-brew libvterm
-brew lld
-brew llvm
+brew lld@19
+brew llvm@19
 brew lpeg
 brew lua
 brew luajit
@@ -51,9 +54,9 @@ brew lz4
 brew mas
 brew mpdecimal
 brew mpfr
-brew msgpack
 brew ncurses
 brew neovim
+brew node
 brew nowplaying-cli
 brew oh-my-posh
 brew oniguruma
@@ -64,7 +67,6 @@ brew pipes-sh
 brew pkgconf
 brew pmix
 brew portaudio
-brew python@3.13
 brew readline
 brew ripgrep
 brew spicetify-cli
@@ -72,15 +74,16 @@ brew sqlite
 brew superfile
 brew switchaudio-osx
 brew television
+brew terminal-notifier
 brew tlrc
 brew tmux
 brew tree-sitter
 brew tty-clock
 brew unibilium
 brew utf8proc
+brew web-ext
 brew wget
 brew xz
-brew z3
 brew zig
 brew zoxide
 brew zsh-autosuggestions
@@ -128,5 +131,5 @@ tap rcmdnk/file
 brew brew-file
 
 # App Store applications
-appstore 1444383602 Goodnotes (6.6.18)
-appstore 497799835 Xcode (16.2)
+appstore 1444383602 Goodnotes (6.6.49)
+appstore 497799835 Xcode (16.4)
