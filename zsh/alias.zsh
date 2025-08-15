@@ -1,6 +1,6 @@
 alias ~='cd ~'
 alias cls=clear
-alias l='eza --icons=always --oneline'
+alias l='eza --icons=always --oneline '
 alias ls='l --long'
 alias la='ls --all'
 alias lg='ls --all --git-ignore'

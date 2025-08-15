@@ -2,32 +2,26 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    "saghen/blink.cmp",
+    "mason-org/mason.nvim",
+    "mason-org/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    { "antosha417/nvim-lsp-file-operations", config = true },
     {
       "folke/lazydev.nvim",
-      ft = "lua", -- only load on lua files
+      ft = "lua",
       opts = {},
     },
   },
   config = function()
-    -- import lspconfig plugin
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
     local lspconfig = require("lspconfig")
+    local configs = require("lspconfig.configs")
 
-    -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
-
-    -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-    -- import mason
     local mason = require("mason")
     local mason_tool_installer = require("mason-tool-installer")
 
-    local keymap = vim.keymap -- for conciseness
+    local keymap = vim.keymap
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -87,18 +81,13 @@ return {
       end,
     })
 
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- enable mason and configure icons
     mason.setup({
       ui = {
         icons = {
@@ -110,11 +99,16 @@ return {
     })
 
     mason_lspconfig.setup({
-      automatic_installation = true,
+      automatic_enable = true,
+      automatic_installatn = true,
       -- list of servers for mason to install
       ensure_installed = {
         "html",
+        "bashls",
         "cssls",
+        "yamlls",
+        "jsonls",
+        "eslint",
         "lua_ls",
         "graphql",
         "rust_analyzer",
@@ -129,60 +123,147 @@ return {
         "eslint_d",
       },
     })
-
-    mason_lspconfig.setup_handlers({
-      -- configure lua server (with special settings)
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-      ["graphql"] = function()
-        -- configure graphql language server
-        lspconfig["graphql"].setup({
-          capabilities = capabilities,
-          filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-        })
-      end,
-      ["lua_ls"] = function()
-        -- configure lua server (with special settings)
-        lspconfig["lua_ls"].setup({
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              -- make the language server recognize "vim" global
-              diagnostics = {
-                globals = { "vim" },
-              },
-              completion = {
-                callSnippet = "Replace",
-              },
-            },
+    -- omnisharp languageserver
+    local pid = vim.fn.getpid()
+    -- configure lsp servers
+    lspconfig.rust_analyzer.setup({
+      capabilties = capabilities,
+      filetypes = { "rust" },
+      root_dir = require("lspconfig").util.root_pattern("Cargo.toml", "src/*.rs"),
+      settings = {
+        ["rust_analyzer"] = {
+          cargo = {
+            allFeatures = true,
           },
-        })
-      end,
-      ["rust_analyzer"] = function()
-        lspconfig["rust_analyzer"].setup({
-          settings = {
-            ["rust_analyzer"] = {
-              inlayHints = {
-                enable = true,
-                chainingHints = true,
-                typeHints = true,
-                parameterHints = true,
-                maxLength = 80,
-              },
-              workspace = {
-                symbol = {
-                  search = {
-                    kind = "all_symbols",
-                  },
-                },
-              },
-            },
-          },
-        })
-      end,
+        },
+      },
     })
+    if not configs.ts_ls then
+      configs.ts_ls = {
+        default_config = {
+          cmd = { "typescript-language-server", "--stdio" },
+          capabilties = capabilities,
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "html",
+          },
+          root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", ".git"),
+          single_file_support = true,
+        },
+      }
+    end
+    lspconfig.ts_ls.setup({
+      capabilties = capabilities,
+      cmd = { "typescript-language-server", "--stdio" },
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html",
+      },
+      root_dir = require("lspconfig").util.root_pattern("package.json", "tsconfig.json", ".git"),
+      single_file_support = true,
+    })
+    lspconfig.eslint.setup({
+      capabilties = capabilities,
+    })
+    lspconfig.bashls.setup({
+      capabilities = capabilities,
+    })
+    lspconfig.lua_ls.setup({
+      capabilities = capabilities,
+      -- cmd = { "lua_ls" },
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" }, -- Recognize 'vim' as a global variable
+          },
+          completion = {
+            callSnippet = "Replace",
+          },
+          workspace = {
+            library = {
+              vim.api.nvim_get_runtime_file("", true),
+              "${3rd}/love2d/library",
+            }, -- Include Neovim runtime files
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
+    })
+    lspconfig.graphql.setup({
+      capabilities = capabilities,
+      filetypes = {
+        "graphql",
+        "gql",
+        "svelte",
+        "typescriptreact",
+        "javascriptreact",
+      },
+    })
+    lspconfig.jsonls.setup({
+      capabilities = capabilities,
+    })
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
+    })
+    lspconfig.yamlls.setup({
+      capabilities = capabilities,
+    })
+    lspconfig.html.setup({
+      capabilities = capabilities,
+      filetypes = {
+        "templ",
+        "html",
+        "php",
+        "css",
+        "javascriptreact",
+        "typescriptreact",
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx",
+      },
+    })
+    lspconfig.omnisharp.setup({
+      capabilties = capabilities,
+      cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(pid) },
+    })
+    -- mason_lspconfig.setup_handlers({
+    --   -- configure lua server (with special settings)
+    --   function(server_name)
+    --     lspconfig[server_name].setup({
+    --       capabilities = capabilities,
+    --     })
+    --   end,
+    --   ["rust_analyzer"] = function()
+    --     lspconfig["rust_analyzer"].setup({
+    --       settings = {
+    --         ["rust_analyzer"] = {
+    --           inlayHints = {
+    --             enable = true,
+    --             chainingHints = true,
+    --             typeHints = true,
+    --             parameterHints = true,
+    --             maxLength = 80,
+    --           },
+    --           workspace = {
+    --             symbol = {
+    --               search = {
+    --                 kind = "all_symbols",
+    --               },
+    --             },
+    --           },
+    --         },
+    --       },
+    --     })
+    --   end,
+    -- })
   end,
 }

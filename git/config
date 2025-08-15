@@ -1,33 +1,130 @@
 [user]
 	name = Mahdi Harati
 	email = doolooper@outlook.com
+
+[commit]
+    template = ~/.config/git/template
+    verbose = true  # add more context to commit messages
+
 [alias]
 	st = status -sb
 	c = commit 
 	cm = commit -m
 	undo = reset --soft HEAD^
 	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	l1 = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	l2 = log --graph --oneline --decorate --all
-	l3 = !git log --oneline | grep
-	l4 = log -p -1
-	l5 = "!f() { \
-        	git log --after=\"$(date -j -v-$1d +%Y-%m-%d)\" --oneline; \
-	}; f"
+    lg = log --graph --all --pretty="format:%C(magenta)%h\\ %ar%C(auto)\\ %C(white)%an\\ %D%n%s%n"
+	ls = !git log --oneline | grep
+	la = log -p -1
 	f = fetch --all --prune
     ff = pull --no-edit --ff-only
+    d = diff -w
+    ds = diff -w --staged
+    ss = diff --stat
+
 [core]
     pager = delta
 	editor = nvim
+    autocrlf = input  # keep newlines as in input
+    compression = 9  # trade cpu for network
+    fsync = none
+    whitespace = error  # threat incorrect whitespace as errors
+    preloadindex = true  # preload index for faster status
+
+[advice]
+    addEmptyPathspec = false
+    pushNonFastForward = false
+    statusHints = false
+
+[blame]
+    coloring = highlightRecent
+    date = relative
+
+[diff]
+    context = 3  # less context in diffs
+    renames = copies  # detect copies as renames in diffs
+    interHunkContext = 10  # merge near hunks in diffs
+    colorMoved = default
+
+[log]
+    abbrevCommit = true  # short commits
+    graphColors = blue,yellow,cyan,magenta,green,red
+
+[status]
+    branch = true
+    short = true
+    showStash = true
+    showUntrackedFiles = all  # show individual untracked files
+
+[push]
+    autoSetupRemote = true  # easier to push new branches
+    default = current  # push only current branch by default
+    followTags = true  # push also tags
+
+[pull]
+    default = current
+
+[submodule]
+    fetchJobs = 16
+
+[rebase]
+    autoStash = true
+    missingCommitsCheck = warn  # warn if rebasing with missing commits
+
 [init]
 	defaultBranch = main
+
 [interactive]
     diffFilter = delta --color-only
+
 [delta]
     navigate = true
     line-numbers = true
     true-color = always
+
 [merge]
     conflictstyle = zdiff3
-[diff]
-    colorMoved = default
+
+[pack]
+    threads = 0  # use all available threads
+    windowMemory = 1g  # use 1g of memory for pack window
+    packSizeLimit = 1g  # max size of a packfile
+
+# Integrity
+[transfer]
+    fsckObjects = true
+
+[receive]
+    fsckObjects = true
+
+[fetch]
+    fsckObjects = true
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = -taggerdate
+
+# Colors
+[color "blame"]
+    highlightRecent = black bold,1 year ago,white,1 month ago,default,7 days ago,blue
+
+[color "branch"]
+    current  = magenta
+    local    = default
+    remote   = yellow
+    upstream = green
+    plain    = blue
+
+[color "diff"]
+    meta       = black bold
+    frag       = magenta
+    context    = white
+    whitespace = yellow reverse
+    old        = red
+
+[color.decorate]
+    HEAD = red
+    branch = blue
+    tag = yellow
+    remoteBranch = magenta

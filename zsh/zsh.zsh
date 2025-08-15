@@ -17,7 +17,7 @@ if [[ ":$FPATH:" != *":/Users/doolooper/.config/zsh/completions:"* ]]; then
 fi
 
 export PATH="$HOME/.bin:/Applications/Docker.app/Contents/Resources/bin/:$PATH"
-
+export DOTNET_ROOT="/usr/local/share/dotnet"
 source "/Users/doolooper/.deno/env"
 
 bindkey '^p' atuin-search
