@@ -96,11 +96,23 @@ return {
     opts = {
       text_format = function(symbol)
         local res = {}
-
+        local stacked_functions = symbol.stacked_count > 0 and (" | +%s"):format(symbol.stacked_count) or ""
         if symbol.references then
           local usage = symbol.references == 1 and "reference" or "references"
-          table.insert(res, { ("󰌹  %s %s"):format(symbol.references, usage), "LspCodeLens" })
+          table.insert(res, { ("󰌹 %s %s"):format(symbol.references, usage), "LspCodeLens" })
         end
+
+        if symbol.definition then
+          local usage = symbol.definition == 1 and "definition" or "definitions"
+          table.insert(res, { ("󰳽 %s %s"):format(symbol.definition, usage), "LspCodeLens" })
+        end
+
+        if symbol.implementation then
+          local usage = symbol.implementation == 1 and "implementation" or "implementations"
+          table.insert(res, { ("󰡱 %s %s"):format(symbol.implementation, usage), "LspCodeLens" })
+        end
+
+        table.insert(res, { stacked_functions, "LspCodeLens" })
 
         return res
       end,
