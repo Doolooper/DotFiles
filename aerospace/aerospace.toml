@@ -81,26 +81,22 @@ cmd-ctrl-alt-shift-j = [
 ]
 cmd-ctrl-alt-shift-f = 'fullscreen'
 
-cmd-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop left'
-cmd-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop down'
-cmd-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop up'
-cmd-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop right'
+alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop left'
+alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop down'
+alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop up'
+alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop right'
 
-cmd-1 = 'workspace --auto-back-and-forth 1' # General
-cmd-2 = 'workspace --auto-back-and-forth 2' # Terminal
-cmd-3 = 'workspace --auto-back-and-forth 3' # Browser
-cmd-4 = 'workspace --auto-back-and-forth 4' # Editor
-cmd-5 = 'workspace --auto-back-and-forth 5' # Database
-cmd-6 = 'workspace --auto-back-and-forth 6' # Music
-cmd-7 = 'workspace --auto-back-and-forth 7' # A 
-cmd-8 = 'workspace --auto-back-and-forth 8' # B
-cmd-9 = 'workspace --auto-back-and-forth 9' # Secret
+alt-1 = 'workspace --auto-back-and-forth 1' # General
+alt-2 = 'workspace --auto-back-and-forth 2' # Terminal
+alt-3 = 'workspace --auto-back-and-forth 3' # Browser
+alt-4 = 'workspace --auto-back-and-forth 4' # Editor
+alt-5 = 'workspace --auto-back-and-forth 5' # Database
+alt-6 = 'workspace --auto-back-and-forth 6' # Music
+alt-7 = 'workspace --auto-back-and-forth 7' # A 
+alt-8 = 'workspace --auto-back-and-forth 8' # B
+alt-9 = 'workspace --auto-back-and-forth 9' # Secret
 
 alt-tab = 'workspace-back-and-forth'
-cmd-ctrl-alt-shift-p = [
-  'move-node-to-monitor --wrap-around next',
-  'focus-monitor next --wrap-around' 
-]
 
 [mode.service.binding]
 esc = [

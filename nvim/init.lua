@@ -1,2 +1,1 @@
-require("doolooper.core")
-require("doolooper.lazy")
+require("config")

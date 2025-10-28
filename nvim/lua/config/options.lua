@@ -52,10 +52,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.iskeyword:append("-") -- consider string-string as whole word
 opt.fillchars = [[eob:·,fold: ,foldopen:,foldsep: ,foldclose:]]
 
--- -- enable spell check
--- opt.spell = true
--- opt.spelllang = "en_us"
-
 -- fold options
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value

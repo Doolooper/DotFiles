@@ -17,7 +17,6 @@ return {
         yaml = { "prettier" },
         markdown = { "prettier" },
         graphql = { "prettier" },
-        liquid = { "prettier" },
         lua = { "stylua" },
         sh = { "shfmt" },
       },
