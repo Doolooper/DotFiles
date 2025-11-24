@@ -6,7 +6,8 @@ fg_color="#c5c9c7"
 windows_bg_color="#393B44"
 windows_fg_color="#A4A7A4"
 
-tmux set-option -g status-style fg=${fg_color},bg=${bg_color}
+tmux set -g status-style fg=${fg_color},bg=${bg_color}
+tmux set -g message-style fg=${fg_color},bg=${bg_color}
 
 tmux set-window-option -g window-status-current-style bg=${windows_bg_color},fg=${windows_fg_color}
 tmux set-window-option -g window-status-style bg=${bg_color},fg=${windows_fg_color}
