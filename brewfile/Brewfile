@@ -2,7 +2,6 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew atac
 brew atuin
 brew bash
 brew bat
@@ -29,7 +28,7 @@ brew go
 brew grep
 brew helix
 brew hwloc
-brew icu4c@77
+brew icu4c@78
 brew ifstat
 brew iniparser
 brew isl
@@ -41,23 +40,25 @@ brew libgit2
 brew libidn2
 brew libmpc
 brew libnghttp2
+brew libnghttp3
+brew libngtcp2
 brew libssh2
 brew libunistring
 brew libuv
-brew lld@19
-brew llvm@19
+brew lld@20
+brew llvm@20
 brew lpeg
 brew lua
 brew luajit
 brew luv
 brew lz4
 brew mas
+brew media-control
 brew mpdecimal
 brew mpfr
 brew ncurses
 brew neovim
 brew node
-brew nowplaying-cli
 brew oh-my-posh
 brew oniguruma
 brew open-mpi
@@ -69,6 +70,7 @@ brew pmix
 brew portaudio
 brew readline
 brew ripgrep
+brew simdjson
 brew spicetify-cli
 brew sqlite
 brew superfile
@@ -81,9 +83,11 @@ brew tree-sitter
 brew tty-clock
 brew unibilium
 brew utf8proc
+brew uvwasi
 brew web-ext
 brew wget
 brew xz
+brew yyjson
 brew zig
 brew zoxide
 brew zsh-autosuggestions
@@ -103,6 +107,7 @@ cask font-zed-mono-nerd-font
 cask pearcleaner
 cask powershell
 cask sf-symbols
+cask stats
 cask wezterm
 
 tap homebrew/services
@@ -122,8 +127,6 @@ tap jesseduffield/lazygit
 tap jesseduffield/lazynpm
 brew lazynpm
 
-tap julien-cpsn/atac
-
 tap nikitabobko/tap
 cask aerospace
 
@@ -131,5 +134,5 @@ tap rcmdnk/file
 brew brew-file
 
 # App Store applications
-appstore 1444383602 Goodnotes (6.6.49)
-appstore 497799835 Xcode (16.4)
+appstore 1444383602 Goodnotes (7.0.15)
+appstore 497799835 Xcode (26.1.1)

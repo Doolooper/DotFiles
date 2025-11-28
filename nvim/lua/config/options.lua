@@ -25,7 +25,6 @@ opt.incsearch = true -- show search matches as you type
 -- cursor line
 opt.cursorline = true -- highlight the current cursor line
 opt.scrolloff = 8 -- keep 8 lines above and below cursor
-
 -- backup & undo
 opt.swapfile = false
 opt.backup = false
@@ -53,7 +52,7 @@ opt.iskeyword:append("-") -- consider string-string as whole word
 opt.fillchars = [[eob:·,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- fold options
-vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true

@@ -1,3 +1,7 @@
+config-version = 2
+
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
 start-at-login = true
 
 after-login-command = []
@@ -20,7 +24,6 @@ on-focused-monitor-changed = [
 
 on-focus-changed = [
   'move-mouse window-lazy-center',
-  'exec-and-forget sketchybar --trigger front_app_switched',
   'exec-and-forget sketchybar --trigger update_windows',
   'exec-and-forget sketchybar_bottom --trigger update_windows'
 ]
@@ -37,7 +40,7 @@ default-root-container-orientation = 'auto'
 key-mapping.preset = 'qwerty'
 
 [gaps]
-outer.bottom =     [{monitor.'^built-in retina display$' = 48 }, 48]
+outer.bottom =     [{monitor.'^built-in retina display$' = 45 }, 48]
 outer.top =        [{monitor.'^built-in retina display$' = 16 }, 48]
 outer.left =       10
 outer.right =      10
@@ -86,17 +89,17 @@ alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop do
 alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop up'
 alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action stop right'
 
-alt-1 = 'workspace --auto-back-and-forth 1' # General
-alt-2 = 'workspace --auto-back-and-forth 2' # Terminal
-alt-3 = 'workspace --auto-back-and-forth 3' # Browser
-alt-4 = 'workspace --auto-back-and-forth 4' # Editor
-alt-5 = 'workspace --auto-back-and-forth 5' # Database
-alt-6 = 'workspace --auto-back-and-forth 6' # Music
-alt-7 = 'workspace --auto-back-and-forth 7' # A 
-alt-8 = 'workspace --auto-back-and-forth 8' # B
-alt-9 = 'workspace --auto-back-and-forth 9' # Secret
+alt-1 = 'workspace --auto-back-and-forth 1'
+alt-2 = 'workspace --auto-back-and-forth 2'
+alt-3 = 'workspace --auto-back-and-forth 3'
+alt-4 = 'workspace --auto-back-and-forth 4'
+alt-5 = 'workspace --auto-back-and-forth 5'
+alt-6 = 'workspace --auto-back-and-forth 6'
+alt-7 = 'workspace --auto-back-and-forth 7'
+alt-8 = 'workspace --auto-back-and-forth 8'
+alt-9 = 'workspace --auto-back-and-forth 9'
 
-alt-tab = 'workspace-back-and-forth'
+# alt-tab = 'workspace-back-and-forth'
 
 [mode.service.binding]
 esc = [

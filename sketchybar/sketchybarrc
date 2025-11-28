@@ -22,9 +22,9 @@ bar=(
 	topmost=window
 	blur_radius=0
 	y_offset=4
-	color=$BAR_COLOR
+	color=$TRANSPARENT
 	border_color=$BORDER_COLOR
-	border_width=1
+	border_width=0
 )
 
 sketchybar --bar "${bar[@]}"
@@ -52,9 +52,10 @@ defaults=(
 
 	# background
 	background.height=25
-	background.border_width=0
+	background.border_width=1
 	background.padding_left=3
 	background.padding_right=3
+	background.border_color=$BORDER_COLOR
 	background.corner_radius=$ITEM_CORNER_RADIUS
 
 	# popup

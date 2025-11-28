@@ -16,11 +16,12 @@ tmux set -g window-status-separator " "
 tmux set -g window-status-current-format "#[fg=#c8c093,bg=#393836]#[bg=#c8c093,fg=#393836] #I #W  #[fg=#c8c093,bg=#393836]"
 tmux set -g window-status-format "#[bg=#1f1f26,fg=#393836]#[fg=#c8c093,bg=#393836] #I:#W #[bg=#1f1f26,fg=#393836]"
 
-tmux set -g status-left ' #[bg=#c8c093,fg=#1f1f26]#{?client_prefix, ⧗ , #S} #(cat #{socket_path}-\#{session_id}-vimbridge)' 
+tmux set -g status-left ' #[fg=#c8c093,bg=#1f1f26]#[bg=#c8c093,fg=#1f1f26]#{?client_prefix,  , #S }#[fg=#c8c093,bg=#1f1f26] #(cat #{socket_path}-\#{session_id}-vimbridge)' 
 tmux set -g status-right '#(cat #{socket_path}-\#{session_id}-vimbridge-R) #[bg=#1f1f26,fg=#c5c9c7] #(~/.config/tmux/cwd.sh) '
 
 tmux set -g focus-events on
-tmux set -g status-left-length 99
-tmux set -g status-right-length 99
 tmux set -g status-justify absolute-centre
 
+# length settings
+tmux set -g status-left-length 99
+tmux set -g status-right-length 99

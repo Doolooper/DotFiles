@@ -1,3 +1,7 @@
+SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
+
+sketchybar_bottom --add event spotify_event "$SPOTIFY_EVENT"
+
 sketchybar_bottom --add item music.prev center \
     --set music.prev \
     drawing=off \
@@ -18,7 +22,7 @@ sketchybar_bottom \
     background.color=$PLAYER_COLOR \
     updates=on \
     script="$PLUGIN_DIR/music.sh" \
-    --subscribe music media_change space_windows_change mouse.clicked
+    --subscribe music spotify_event mouse.clicked
 
 sketchybar_bottom --add item music.next center \
     --set music.next \
