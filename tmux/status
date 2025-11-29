@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-bg_color="#1f1f26"
+bg_color="#14171d"
 fg_color="#c5c9c7"
 
 windows_bg_color="#393B44"
@@ -13,11 +13,11 @@ tmux set-window-option -g window-status-current-style bg=${windows_bg_color},fg=
 tmux set-window-option -g window-status-style bg=${bg_color},fg=${windows_fg_color}
 tmux set -g window-status-separator " "
 
-tmux set -g window-status-current-format "#[fg=#c8c093,bg=#393836]#[bg=#c8c093,fg=#393836] #I #W  #[fg=#c8c093,bg=#393836]"
-tmux set -g window-status-format "#[bg=#1f1f26,fg=#393836]#[fg=#c8c093,bg=#393836] #I:#W #[bg=#1f1f26,fg=#393836]"
+tmux set -g window-status-current-format "#[fg=#c8c093,bg=#14171d]#[bg=#c8c093,fg=#393836] #I #W  #[fg=#c8c093,bg=#14171d]"
+tmux set -g window-status-format "#[bg=#14171d,fg=#393836]#[fg=#c8c093,bg=#393836] #I:#W #[bg=#14171d,fg=#393836]"
 
-tmux set -g status-left ' #[fg=#c8c093,bg=#1f1f26]#[bg=#c8c093,fg=#1f1f26]#{?client_prefix,  , #S }#[fg=#c8c093,bg=#1f1f26] #(cat #{socket_path}-\#{session_id}-vimbridge)' 
-tmux set -g status-right '#(cat #{socket_path}-\#{session_id}-vimbridge-R) #[bg=#1f1f26,fg=#c5c9c7] #(~/.config/tmux/cwd.sh) '
+tmux set -g status-left ' #[fg=#c8c093,bg=#14171d]#[bg=#c8c093,fg=#14171d]#{?client_prefix,  , #S }#[fg=#c8c093,bg=#14171d] #(cat #{socket_path}-\#{session_id}-vimbridge)'
+tmux set -g status-right '#(cat #{socket_path}-\#{session_id}-vimbridge-R) #[bg=#14171d,fg=#c5c9c7] #(~/.config/tmux/cwd.sh) '
 
 tmux set -g focus-events on
 tmux set -g status-justify absolute-centre

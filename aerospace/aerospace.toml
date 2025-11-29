@@ -40,8 +40,8 @@ default-root-container-orientation = 'auto'
 key-mapping.preset = 'qwerty'
 
 [gaps]
-outer.bottom =     [{monitor.'^built-in retina display$' = 45 }, 48]
-outer.top =        [{monitor.'^built-in retina display$' = 16 }, 48]
+outer.bottom =     [{monitor.'^built-in retina display$' = 40 }, 48]
+outer.top =        [{monitor.'^built-in retina display$' = 10 }, 48]
 outer.left =       10
 outer.right =      10
 inner.horizontal = 10
