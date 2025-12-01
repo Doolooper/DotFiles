@@ -10,9 +10,10 @@ alias gg=lazygit
 alias dd=lazydocker
 alias v=nvim
 alias vim=nvim
-alias nvim_config='v ~/.config/nvim/'
+alias nvim_config='v ~/.config/nvim'
 alias rm='rm -rf'
 alias md='mkdir -p'
 alias cd='z'
+alias dc='cd'
 alias ff=fastfetch
 

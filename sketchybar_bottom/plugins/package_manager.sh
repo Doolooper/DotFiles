@@ -4,13 +4,10 @@ update() {
 }
 
 tmux_update_first_session() {
-    local session=$(tmux list-sessions -F '#S' 2> /dev/null | head -n 1)
+    local session_name="update_$$" # unique session name using the PID
 
-    if [[ -z "$session" ]]; then
-        return 1
-    fi
-
-    tmux send-keys -t "${session}:1" 'update' C-m
+    # Create a new detached session running the 'update' command
+    tmux new-session -d -s "$session_name" "update; tmux kill-session -t $session_name"
 }
 
 case "$SENDER" in
