@@ -51,6 +51,8 @@ update () {
     rustup update 
     echo "${BLUE}update deno${NC}"
     deno upgrade
+    echo "${BLUE}update bun${NC}"
+    bun upgrade
     echo "${BLUE}update vscode extensions${NC}"
     code --update-extensions
 }

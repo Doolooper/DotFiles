@@ -17,6 +17,9 @@ if [[ ":$FPATH:" != *":/Users/doolooper/.config/zsh/completions:"* ]]; then
 fi
 
 export PATH="$HOME/.bin:/Applications/Docker.app/Contents/Resources/bin/:$PATH"
+export PATH="$HOME/.aspire/bin:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 export DOTNET_ROOT="/usr/local/share/dotnet"
 source "/Users/doolooper/.deno/env"
 
@@ -53,6 +56,10 @@ fi
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
+
+
+# bun completions
+[ -s "/Users/doolooper/.bun/_bun" ] && source "/Users/doolooper/.bun/_bun"
 
 eval "$(zoxide init zsh)"
 

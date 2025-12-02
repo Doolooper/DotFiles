@@ -2,11 +2,10 @@ return {
   "bassamsdata/namu.nvim",
   opts = {
     global = {},
-    namu_symbols = { -- Specific Module options
+    namu_symbols = {
       options = {},
     },
   },
-  -- === Suggested Keymaps: ===
   vim.keymap.set("n", "<leader>ds", ":Namu symbols<cr>", {
     desc = "Jump to LSP symbol",
     silent = true,
