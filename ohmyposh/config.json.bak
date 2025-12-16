@@ -34,22 +34,22 @@
     "background": "p:none"
   },
   "secondary_prompt": {
-    "template": "\udb80\uddd8  ",
+    "template": "󰇘  ",
     "foreground": "p:bright-black",
     "background": "p:none"
   },
   "transient_prompt": {
-    "template": "❯ ",
+    "background": "transparent",
     "foreground": "#ffffff",
-    "background": "transparent"
+    "template": "❯ "
   },
   "error_line": {
     "template": "❯ ",
     "foreground": "p:diag-error",
     "background": "p:none"
   },
-  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
   "pwd": "osc7",
+  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
   "blocks": [
     {
       "type": "prompt",
@@ -57,7 +57,7 @@
       "overflow": "hide",
       "segments": [
         {
-          "options": {
+          "properties": {
             "cache_duration": "none",
             "folder_separator_icon": "/",
             "home_icon": "~",
@@ -70,8 +70,8 @@
           "type": "path",
           "style": "plain",
           "templates": [
-            "{{ if not .Writable }} <p:yellow>\uea75{{ else }}{{ end }}",
-            "\udb80\ude4b {{ path .Path .Location }}</>"
+            "{{ if not .Writable }} <p:yellow>{{ else }}{{ end }}",
+            "󰉋 {{ path .Path .Location }}</>"
           ]
         }
       ]
@@ -80,10 +80,11 @@
       "type": "prompt",
       "alignment": "left",
       "overflow": "hide",
+      "newline": true,
       "segments": [
         {
-          "options": {
-            "branch_icon": "\udb80\udea2 ",
+          "properties": {
+            "branch_icon": "󰊢 ",
             "cache_duration": "none",
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -107,7 +108,7 @@
           ]
         },
         {
-          "options": {
+          "properties": {
             "always_enabled": true,
             "cache_duration": "none"
           },
@@ -124,23 +125,22 @@
           ],
           "templates": [
             "{{ if .Type }}",
-            "{{ if eq .Type \"node\" }} \udb80\udf99{{ end }}",
-            "{{ if eq .Type \"cargo\" }} \udb85\ude17{{ end }}",
-            "{{ if eq .Type \"dotnet\" }} \ue77f{{ end }}",
-            "{{ if eq .Type \"powershell\" }} \udb82\ude0a{{ end }}",
+            "{{ if eq .Type \"node\" }} 󰎙{{ end }}",
+            "{{ if eq .Type \"cargo\" }} 󱘗{{ end }}",
+            "{{ if eq .Type \"dotnet\" }} {{ end }}",
+            "{{ if eq .Type \"powershell\" }} 󰨊{{ end }}",
             "{{ end }}",
             "{{ if .Version }} {{ .Version }}{{ if .Name }} {{ .Name }}{{ end }}{{ end }}"
           ]
         }
-      ],
-      "newline": true
+      ]
     },
     {
       "type": "prompt",
       "alignment": "right",
       "segments": [
         {
-          "options": {
+          "properties": {
             "always_enabled": true,
             "cache_duration": "none",
             "style": "austin",
@@ -156,9 +156,10 @@
     {
       "type": "prompt",
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
-          "options": {
+          "properties": {
             "always_enabled": true,
             "cache_duration": "none",
             "status_separator": " | "
@@ -170,11 +171,10 @@
             "{{ if (gt .Code 0) }}p:diag-error{{ else }}p:diag-ok{{ end }}"
           ]
         }
-      ],
-      "newline": true
+      ]
     }
   ],
-  "version": 4,
+  "version": 3,
   "shell_integration": true,
   "final_space": true
 }

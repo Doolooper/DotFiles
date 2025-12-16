@@ -15,4 +15,9 @@ return {
       current_line_blame_formatter = "<summary> • <author_time:%R - %Y-%m-%d %H:%M> • <author> • <<abbrev_sha>>",
     },
   },
+  {
+    "esmuellert/vscode-diff.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "CodeDiff",
+  },
 }

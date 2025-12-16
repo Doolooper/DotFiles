@@ -29,5 +29,6 @@
   // ui
   "ui_font_size": 16,
   // editor
-  "autosave": "on_window_change"
+  "autosave": "on_window_change",
+  "disable_ai": false
 }
